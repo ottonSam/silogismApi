@@ -5,7 +5,7 @@ const routes = require('./routes.js');
 const app = express();
 
 //Iniciando a url
-mongoose.connect('mongodb+srv://silogica:!1usbw@cluster0-86qfz.mongodb.net/test?retryWrites=true&w=majority',{
+mongoose.connect(process.env.MONGO_URL,{
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
@@ -17,4 +17,4 @@ mongoose.connect('mongodb+srv://silogica:!1usbw@cluster0-86qfz.mongodb.net/test?
 app.use(express.json());
 app.use(routes);
 
-app.listen(3001);
+app.listen(process.env.PORT || 3001);
