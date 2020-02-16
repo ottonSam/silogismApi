@@ -1,8 +1,9 @@
-const { Router } = require('express');
+const express = require('express');
+const routes = express.Router()
 const SilogismController = require('./controllers/SilogismController')
+//const ReduceController = require('./controllers/ReduceController')
 
-const routes = Router();
 
-routes.post('/silogism', SilogismController.store); 
+routes.post('/', SilogismController.store)
 
 module.exports = routes;

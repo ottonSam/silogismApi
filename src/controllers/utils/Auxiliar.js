@@ -62,6 +62,16 @@ module.exports = {
       });
     return(listPreRed);
   },
+  preRedRed(proposicaoMaior, proposicaoMenor, conclusao) {
+    var listPre = [proposicaoMaior[1], proposicaoMaior[2], proposicaoMenor[1],
+    proposicaoMenor[2], conclusao[1], conclusao[2], proposicaoMaior[4], proposicaoMaior[5], 
+    proposicaoMenor[4], proposicaoMenor[5], conclusao[4], conclusao[5]];
+      
+    var listPreRed = listPre.filter( function( elem, index, listPre ) {
+        return listPre.indexOf( elem ) === index;
+      });
+    return(listPreRed);
+  },
   exteTerm(proposicaoMaior, proposicaoMenor, conclusao) {
     var quantPre = [proposicaoMaior[0], proposicaoMenor[0], conclusao[0]];
     var e1 = descExte(quantPre[0]), e2 = descExte(quantPre[1]), e3 = descExte(quantPre[2]);
