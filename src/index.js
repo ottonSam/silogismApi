@@ -4,7 +4,7 @@ const routes = require('./routes.js');
 const cors = require('cors');
 
 const app = express();
-
+app.use(express.json());
 //Iniciando a url
 mongoose.connect(process.env.MONGO_URL,{
   useNewUrlParser: true,
